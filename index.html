@@ -57,6 +57,15 @@ letter-spacing: 1px;
 color: var(--accent);
 }
 .brand span { color: var(--accent-2); }
+
+/* ECCO IL FIX PER L'ICONA IN ALTO: */
+.brand img {
+width: 32px;
+height: 32px;
+border-radius: 8px;
+object-fit: cover;
+}
+
 .nav a {
 color: var(--muted);
 text-decoration: none;
@@ -75,13 +84,18 @@ text-align: center;
 max-width: 800px;
 margin: 0 auto;
 }
+
+/* ECCO IL FIX PER L'ICONA AL CENTRO: */
 .app-icon-main {
-width: 80px;
-height: 80px;
-border-radius: 18px;
+width: 100px;
+height: 100px;
+border-radius: 22px;
 margin: 0 auto 20px auto;
 box-shadow: 0 10px 40px rgba(0, 210, 255, 0.35);
+object-fit: cover;
+display: block;
 }
+
 h1 {
 margin: 0;
 font-size: clamp(2.5rem, 6vw, 4rem);
