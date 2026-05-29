@@ -7,12 +7,13 @@
 <meta name="description" content="Privacy Policy for AmazeD Labyrinth." />
 <style>
 :root {
---bg: #05070d;
---card: rgba(255,255,255,0.06);
---card-border: rgba(255,255,255,0.12);
---text: #f5f7fb;
---muted: #b9c2d0;
---accent: #a855f7;
+--bg: #030814;
+--card: rgba(255,255,255,0.04);
+--card-border: rgba(0, 210, 255, 0.15);
+--text: #e0e6ed;
+--muted: #8b9fb3;
+--accent: #00d2ff;
+--accent-2: #f000ff;
 --radius: 22px;
 --max: 800px;
 }
@@ -20,7 +21,7 @@
 body {
 margin: 0;
 font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
-background: #05070d;
+background: #030814;
 color: var(--text);
 line-height: 1.6;
 }
@@ -31,13 +32,14 @@ background: var(--card);
 border: 1px solid var(--card-border);
 border-radius: var(--radius);
 padding: 40px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 h1, h2, h3 { color: #fff; }
 h1 { font-size: 2.5rem; margin-top: 0; color: var(--accent); margin-bottom: 40px; }
-h2 { font-size: 1.25rem; margin-top: 30px; margin-bottom: 10px; color: #fff; }
+h2 { font-size: 1.25rem; margin-top: 30px; margin-bottom: 10px; color: var(--accent-2); }
 p, li { color: var(--muted); margin-bottom: 16px; }
 a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a:hover { text-decoration: underline; color: var(--accent-2); }
 .back-link { display: inline-block; margin-bottom: 20px; font-weight: 600; }
 footer {
 margin-top: 40px;
