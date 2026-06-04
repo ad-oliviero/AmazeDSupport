@@ -4,123 +4,179 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AmazeD - Epic Multiplayer Labyrinth</title>
-    <!-- Importazione del font Cinzel da Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0b0c10;
-            --text-color: #c5c6c7;
-            --accent-purple: #9b59b6;
-            --accent-blue: #45a29e;
-            --button-glow: rgba(155, 89, 182, 0.6);
+            --bg-color: #0f0f13;
+            --text-main: #e0e0e0;
+            --text-muted: #888899;
+            --accent-cyan: #4bc0c0;
         }
-
-        body, html {
+        body {
             margin: 0;
             padding: 0;
             background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Cinzel', serif;
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
-
-        .container {
-            flex: 1;
+        
+        /* Sezione Hero (Design dello Screenshot) */
+        .hero {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            min-height: 70vh;
             text-align: center;
             padding: 2rem;
         }
-
         .logo {
+            font-family: "Georgia", serif;
             font-size: 5rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
+            font-weight: bold;
             letter-spacing: 4px;
-            text-shadow: 0 0 20px rgba(69, 162, 158, 0.5);
+            margin-bottom: 1rem;
         }
-
-        /* La "A" viola e luminosa */
-        .logo .purple-a {
-            color: var(--accent-purple);
-            text-shadow: 0 0 20px var(--accent-purple);
+        .logo .a {
+            color: #d884d8;
+            text-shadow: 0 0 20px rgba(216, 132, 216, 0.6);
         }
-
-        /* Il resto della scritta in azzurro/ciano */
-        .logo .blue-text {
-            color: var(--accent-blue);
+        .logo .mazed {
+            color: #84d8d8;
+            text-shadow: 0 0 20px rgba(132, 216, 216, 0.6);
         }
-
         .subtitle {
-            font-size: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
             margin-bottom: 3rem;
-            color: #a0a0a0;
         }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 3rem;
-            font-size: 1.5rem;
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            color: #fff;
-            text-decoration: none;
+        .play-btn {
             background: transparent;
-            border: 2px solid var(--accent-purple);
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 15px var(--button-glow);
+            color: white;
+            border: 2px solid rgba(216, 132, 216, 0.5);
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 6px;
             cursor: pointer;
-            margin: 10px;
-        }
-
-        .cta-button:hover {
-            background: var(--accent-purple);
-            box-shadow: 0 0 30px var(--accent-purple);
-            transform: scale(1.05);
-        }
-
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            background: rgba(0, 0, 0, 0.5);
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: var(--accent-blue);
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(216, 132, 216, 0.2);
             text-decoration: none;
-            transition: color 0.3s;
+        }
+        .play-btn:hover {
+            box-shadow: 0 0 25px rgba(216, 132, 216, 0.6);
+            background: rgba(216, 132, 216, 0.1);
+        }
+        
+        /* Sezione Contenuti (Informazioni e Supporto) */
+        .content-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 3rem;
+        }
+        .content-section h2 {
+            font-size: 1.8rem;
+            color: var(--accent-cyan);
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(75, 192, 192, 0.3);
+            padding-bottom: 0.5rem;
+        }
+        .content-section h3 {
+            color: #fff;
+            margin-top: 2rem;
+        }
+        .content-section p, .content-section li {
+            line-height: 1.6;
+            color: #bbbbcc;
+            margin-bottom: 1rem;
+        }
+        .content-section ul {
+            margin-bottom: 2rem;
+        }
+        .faq-item {
+            margin-bottom: 1.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        .faq-question {
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 0.5rem;
         }
 
+        /* Footer */
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        footer a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            margin-top: 1rem;
+            display: inline-block;
+        }
         footer a:hover {
-            color: var(--accent-purple);
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+
+    <!-- HERO SECTION -->
+    <div class="hero">
         <div class="logo">
-            <span class="purple-a">A</span><span class="blue-text">mazeD</span>
+            <span class="a">A</span><span class="mazed">MAZED</span>
         </div>
         <div class="subtitle">The Ultimate Split-Screen Multiplayer Experience</div>
-        
-        <div>
-            <!-- Puoi inserire qui un link per scaricare il gioco o il link all'app store -->
-            <a href="#play" class="cta-button">PLAY NOW</a>
-        </div>
+        <a href="#" class="play-btn">Play Now</a>
     </div>
 
+    <!-- INFORMAZIONI E SUPPORTO -->
+    <div class="content-section">
+        <h2>About the Game</h2>
+        <p>AmazeD is an epic split-screen multiplayer labyrinth game where players use their smartphones as controllers. Navigate procedurally generated mazes, avoid obstacles, and compete against your friends in real-time!</p>
+        
+        <h3>Features</h3>
+        <ul>
+            <li><strong>Phone as a Controller:</strong> Connect your smartphone to the game using a simple code. Your phone displays a dynamic minimap and character-specific UI.</li>
+            <li><strong>Unique Characters:</strong> Choose from 6 distinct heroes (Myra, Zed, Flick, Otnas, Nixie, Yumi), each with their own unique color theme.</li>
+            <li><strong>Dynamic Mazes:</strong> Every match features a newly generated labyrinth so you never play the same game twice.</li>
+        </ul>
+
+        <h2>Support & FAQ</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">Q: How do I connect my phone to play?</div>
+            <div class="faq-answer">A: Launch the game on your main screen (PC/Console) and wait for the lobby to generate a Connection Code. Open this website on your smartphone, enter the code, and select your character!</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: My phone is disconnecting during the match.</div>
+            <div class="faq-answer">A: Ensure that both your main device and your smartphone are connected to a stable Wi-Fi network. Avoid locking your phone screen while playing.</div>
+        </div>
+
+        <h2>Contact Us</h2>
+        <p>If you need further assistance, encounter a bug, or just want to send feedback, please reach out to our support team at: <a href="mailto:support@amazed.com" style="color: var(--accent-cyan);">support@amazed.com</a></p>
+    </div>
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 AmazeD. All rights reserved.</p>
-        <p><a href="privacy.html">Privacy Policy</a></p>
+        &copy; 2026 AmazeD. All Rights Reserved.<br>
+        <a href="privacy.html">PRIVACY POLICY</a>
     </footer>
+
 </body>
 </html>
