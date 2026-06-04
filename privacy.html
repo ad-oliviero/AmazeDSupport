@@ -6,8 +6,7 @@
 <title>Privacy Policy - AmazeD</title>
 <link rel="icon" type="image/png" href="AppIcon.png" />
 <style>
-
-    
+/* Condividiamo lo stesso CSS per mantenere perfetta coerenza in tutto il sito */
 :root {
 --bg: #05070d;
 --bg-soft: #0b1120;
@@ -67,7 +66,7 @@ border-radius: 7px;
 color: #d884d8;
 text-shadow: 0 0 10px rgba(216, 132, 216, 0.6);
 }
-.brand .mazed {
+.brand .maze {
 color: #84d8d8;
 text-shadow: 0 0 10px rgba(132, 216, 216, 0.6);
 }
@@ -78,6 +77,31 @@ margin-left: 18px;
 font-size: 0.9rem;
 }
 .nav a:hover { color: #fff; }
+
+/* Buttons */
+.btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+height: 46px;
+padding: 0 24px;
+border-radius: 999px;
+text-decoration: none;
+font-weight: 600;
+font-size: 0.95rem;
+transition: 0.3s ease;
+border: 1px solid transparent;
+}
+.btn-secondary {
+background: rgba(255,255,255,0.06);
+color: var(--text);
+border: 1px solid rgba(255,255,255,0.1);
+}
+.btn:hover {
+transform: translateY(-2px);
+filter: brightness(1.1);
+}
+
 section { padding: 40px 0; }
 .section-card {
 background: var(--card);
@@ -124,13 +148,13 @@ gap: 20px;
 <div class="container nav">
 <a href="index.html" class="brand">
 <img src="AppIcon.png" alt="AmazeD">
-<div><span class="a">A</span><span class="mazed">MAZED</span></div>
+<div><span class="a">A</span><span class="maze">MAZE</span><span class="a">D</span></div>
 </a>
 <nav>
 <a href="index.html#about">About</a>
+<a href="index.html#gameplay">Gameplay</a>
 <a href="index.html#support">Support</a>
 <a href="index.html#faq">FAQ</a>
-<a href="privacy.html" style="color: #fff;">Privacy</a>
 </nav>
 </div>
 </header>
@@ -138,6 +162,12 @@ gap: 20px;
 <main>
 <section>
 <div class="container section-card">
+
+<!-- Pulsante Indietro -->
+<a href="index.html" class="btn btn-secondary" style="margin-bottom: 30px; display: inline-flex; width: fit-content; padding: 0 20px; height: 38px; font-size: 0.9rem;">
+&larr; Back to Home
+</a>
+
 <h1>Privacy Policy</h1>
 <p><strong>Last Updated: June 2026</strong></p>
 
