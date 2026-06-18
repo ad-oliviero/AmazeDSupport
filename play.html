@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Play Now - AmazeD</title>
+<link rel="icon" type="image/png" href="AppIcon.png" />
+<style>
+
+:root {
+--bg: #05070d;
+--bg-soft: #0b1120;
+--card: rgba(255,255,255,0.06);
+--card-border: rgba(255,255,255,0.12);
+--text: #f5f7fb;
+--muted: #b9c2d0;
+--accent: #4bc0c0;
+--accent-pink: #d957d9;
+--shadow: 0 20px 50px rgba(0,0,0,0.35);
+--radius: 22px;
+--max: 1100px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+margin: 0;
+font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+background: linear-gradient(180deg, #03050a 0%, #08101d 40%, #05070d 100%);
+color: var(--text);
+line-height: 1.6;
+}
+.container {
+width: min(var(--max), calc(100% - 32px));
+margin: 0 auto;
+}
+header {
+position: sticky;
+top: 0;
+z-index: 10;
+backdrop-filter: blur(14px);
+background: rgba(5, 7, 13, 0.55);
+border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 16px 0;
+}
+.brand {
+display: flex;
+align-items: center;
+gap: 10px;
+font-family: "Georgia", serif;
+font-size: 1.4rem;
+font-weight: bold;
+letter-spacing: 2px;
+text-decoration: none;
+}
+.brand img {
+width: 30px;
+height: 30px;
+border-radius: 7px;
+}
+.brand .a {
+color: #84d8d8; /* Azzurro */
+text-shadow: 0 0 10px rgba(132, 216, 216, 0.6);
+}
+.brand .maze {
+color: #d884d8; /* Viola */
+text-shadow: 0 0 10px rgba(216, 132, 216, 0.6);
+}
+.nav a {
+color: var(--muted);
+text-decoration: none;
+margin-left: 18px;
+font-size: 0.9rem;
+}
+.nav a:hover { color: #fff; }
+
+/* Buttons */
+.btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+height: 46px;
+padding: 0 24px;
+border-radius: 999px;
+text-decoration: none;
+font-weight: 600;
+font-size: 0.95rem;
+transition: 0.3s ease;
+border: 1px solid transparent;
+}
+.btn-secondary {
+background: rgba(255,255,255,0.06);
+color: var(--text);
+border: 1px solid rgba(255,255,255,0.1);
+}
+.btn:hover {
+transform: translateY(-2px);
+filter: brightness(1.1);
+}
+
+section { padding: 40px 0; }
+.section-card {
+background: var(--card);
+border: 1px solid var(--card-border);
+border-radius: var(--radius);
+padding: 40px;
+margin-top: 40px;
+margin-bottom: 40px;
+text-align: center;
+}
+.section-card h1 {
+margin-top: 0;
+color: var(--accent);
+font-size: 2.5rem;
+letter-spacing: -0.02em;
+}
+.section-card p {
+color: var(--muted);
+margin-bottom: 12px;
+}
+
+/* TestFlight banner */
+.testflight-banner {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 18px;
+flex-wrap: wrap;
+max-width: 520px;
+margin: 30px auto 24px;
+padding: 22px 28px;
+background: rgba(255,255,255,0.04);
+border: 1px solid var(--card-border);
+border-radius: 18px;
+text-decoration: none;
+transition: 0.3s ease;
+}
+.testflight-banner:hover {
+transform: translateY(-2px);
+border-color: rgba(0,191,255,0.5);
+box-shadow: 0 0 25px rgba(0,191,255,0.25);
+}
+.testflight-banner img {
+width: 60px;
+height: 60px;
+border-radius: 14px;
+flex-shrink: 0;
+}
+.testflight-text {
+text-align: left;
+}
+.testflight-text .label {
+display: block;
+font-size: 0.8rem;
+color: var(--muted);
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+.testflight-text .title {
+display: block;
+font-size: 1.4rem;
+font-weight: 700;
+color: #fff;
+}
+.testflight-note {
+font-size: 0.85rem;
+color: var(--muted);
+margin-top: 8px;
+}
+
+/* Coming soon */
+.coming-soon {
+margin-top: 36px;
+padding-top: 30px;
+border-top: 1px solid rgba(255,255,255,0.1);
+}
+.coming-soon-badge {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 8px 18px;
+border-radius: 999px;
+background: rgba(216,132,216,0.12);
+border: 1px solid rgba(216,132,216,0.4);
+color: #f0c8f0;
+font-size: 0.85rem;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 1px;
+margin-bottom: 14px;
+}
+.coming-soon h2 {
+margin: 0 0 8px;
+color: #fff;
+font-size: 1.5rem;
+}
+
+footer {
+padding: 40px 0;
+border-top: 1px solid rgba(255,255,255,0.06);
+color: var(--muted);
+font-size: 0.9rem;
+margin-top: auto;
+}
+.footer-wrap {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 20px;
+}
+
+@media (max-width: 600px) {
+section { padding: 20px 0; }
+.section-card {
+padding: 28px 20px;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+.section-card h1 { font-size: 2rem; }
+.testflight-banner {
+gap: 14px;
+margin: 24px auto 20px;
+padding: 18px 20px;
+}
+.testflight-banner img { width: 52px; height: 52px; }
+.testflight-text .title { font-size: 1.25rem; }
+.coming-soon { margin-top: 28px; padding-top: 24px; }
+.coming-soon h2 { font-size: 1.3rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container nav">
+<a href="index.html" class="brand">
+<img src="AppIcon.png" alt="AmazeD">
+<div><span class="a">A</span><span class="maze">MAZE</span><span class="a">D</span></div>
+</a>
+<nav>
+<a href="index.html#about">About</a>
+<a href="index.html#gameplay">Gameplay</a>
+<a href="index.html#support">Support</a>
+<a href="index.html#faq">FAQ</a>
+</nav>
+</div>
+</header>
+
+<main>
+<section>
+<div class="container section-card">
+
+<!-- Back button -->
+<a href="index.html" class="btn btn-secondary" style="margin-bottom: 30px; display: inline-flex; width: fit-content; padding: 0 20px; height: 38px; font-size: 0.9rem;">
+&larr; Back to Home
+</a>
+
+<h1>Play AmazeD</h1>
+<p>AmazeD is currently in beta testing on Apple TestFlight. Join the beta to be among the first to explore the maze!</p>
+
+<!-- Official TestFlight banner -->
+<a class="testflight-banner" href="https://testflight.apple.com/join/qYgHyQS3" target="_blank" rel="noopener">
+<img src="testflight-icon.png" alt="TestFlight">
+<span class="testflight-text">
+<span class="label">Test the beta on</span>
+<span class="title">TestFlight</span>
+</span>
+</a>
+<p class="testflight-note">Requires the free TestFlight app from the App Store. Available on iPhone and iPad.</p>
+
+<!-- Coming soon -->
+<div class="coming-soon">
+<span class="coming-soon-badge">Coming Soon</span>
+<h2>Launching on the App Store</h2>
+<p>The full version of AmazeD is coming soon to the App Store. Stay tuned!</p>
+</div>
+
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footer-wrap">
+<div><strong>AmazeD</strong> • Official Support</div>
+<div>© 2026 Game7</div>
+</div>
+</footer>
+
+</body>
+</html>
