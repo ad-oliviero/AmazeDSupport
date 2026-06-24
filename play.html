@@ -123,80 +123,61 @@ color: var(--muted);
 margin-bottom: 12px;
 }
 
-/* TestFlight banner */
-.testflight-banner {
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 18px;
-flex-wrap: wrap;
-max-width: 520px;
-margin: 30px auto 24px;
-padding: 22px 28px;
-background: rgba(255,255,255,0.04);
-border: 1px solid var(--card-border);
-border-radius: 18px;
-text-decoration: none;
-transition: 0.3s ease;
+/* App Store banners */
+.app-store-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 640px;
+  margin: 30px auto 24px;
 }
-.testflight-banner:hover {
-transform: translateY(-2px);
-border-color: rgba(0,191,255,0.5);
-box-shadow: 0 0 25px rgba(0,191,255,0.25);
+.app-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 24px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  text-decoration: none;
+  transition: 0.3s ease;
 }
-.testflight-banner img {
-width: 60px;
-height: 60px;
-border-radius: 14px;
-flex-shrink: 0;
+.app-banner:hover {
+  transform: translateY(-3px);
+  border-color: rgba(75, 192, 192, 0.5);
+  box-shadow: 0 8px 30px rgba(75, 192, 192, 0.15);
 }
-.testflight-text {
-text-align: left;
+.app-banner-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
-.testflight-text .label {
-display: block;
-font-size: 0.8rem;
-color: var(--muted);
-text-transform: uppercase;
-letter-spacing: 1px;
+.app-banner-info {
+  text-align: center;
 }
-.testflight-text .title {
-display: block;
-font-size: 1.4rem;
-font-weight: 700;
-color: #fff;
+.app-banner-info .app-name {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
 }
-.testflight-note {
-font-size: 0.85rem;
-color: var(--muted);
-margin-top: 8px;
+.app-banner-info .app-desc {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.4;
 }
-
-/* Coming soon */
-.coming-soon {
-margin-top: 36px;
-padding-top: 30px;
-border-top: 1px solid rgba(255,255,255,0.1);
+.app-banner .badge-img {
+  height: 40px;
+  width: auto;
 }
-.coming-soon-badge {
-display: inline-flex;
-align-items: center;
-gap: 8px;
-padding: 8px 18px;
-border-radius: 999px;
-background: rgba(216,132,216,0.12);
-border: 1px solid rgba(216,132,216,0.4);
-color: #f0c8f0;
-font-size: 0.85rem;
-font-weight: 600;
-text-transform: uppercase;
-letter-spacing: 1px;
-margin-bottom: 14px;
-}
-.coming-soon h2 {
-margin: 0 0 8px;
-color: #fff;
-font-size: 1.5rem;
+.app-store-note {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 8px;
 }
 
 footer {
@@ -221,15 +202,15 @@ margin-top: 20px;
 margin-bottom: 20px;
 }
 .section-card h1 { font-size: 2rem; }
-.testflight-banner {
-gap: 14px;
+.app-store-links {
+grid-template-columns: 1fr;
+gap: 16px;
 margin: 24px auto 20px;
-padding: 18px 20px;
 }
-.testflight-banner img { width: 52px; height: 52px; }
-.testflight-text .title { font-size: 1.25rem; }
-.coming-soon { margin-top: 28px; padding-top: 24px; }
-.coming-soon h2 { font-size: 1.3rem; }
+.app-banner { padding: 20px; }
+.app-banner-icon { width: 64px; height: 64px; }
+.app-banner-info .app-name { font-size: 1.1rem; }
+.app-banner .badge-img { height: 36px; }
 }
 </style>
 </head>
@@ -260,23 +241,27 @@ padding: 18px 20px;
 </a>
 
 <h1>Play AmazeD</h1>
-<p>AmazeD is currently in beta testing on Apple TestFlight. Join the beta to be among the first to explore the maze!</p>
+<p>AmazeD is now available on the App Store! Get the main game for your Apple device or the controller for your smartphone.</p>
 
-<!-- Official TestFlight banner -->
-<a class="testflight-banner" href="https://testflight.apple.com/join/qYgHyQS3" target="_blank" rel="noopener">
-<img src="testflight-icon.png" alt="TestFlight">
-<span class="testflight-text">
-<span class="label">Test the beta on</span>
-<span class="title">TestFlight</span>
-</span>
-</a>
-<p class="testflight-note">Requires the free TestFlight app from the App Store. Available on iPhone and iPad.</p>
-
-<!-- Coming soon -->
-<div class="coming-soon">
-<span class="coming-soon-badge">Coming Soon</span>
-<h2>Launching on the App Store</h2>
-<p>The full version of AmazeD is coming soon to the App Store. Stay tuned!</p>
+<div class="app-store-links">
+  <a class="app-banner" href="https://apps.apple.com/us/app/amazed-wizards-adventure/id6772945844" target="_blank" rel="noopener">
+    <img src="AppIcon.png" alt="AmazeD Main Game" class="app-banner-icon">
+    <div class="app-banner-info">
+      <span class="app-name">AmazeD: Wizards Adventure</span>
+      <span class="app-desc">Main Game</span>
+    </div>
+    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="badge-img">
+  </a>
+  <a class="app-banner" href="https://apps.apple.com/us/app/amazed-controller/id6779685625" target="_blank" rel="noopener">
+    <img src="AppIcon.png" alt="AmazeD Controller" class="app-banner-icon">
+    <div class="app-banner-info">
+      <span class="app-name">AmazeD: Controller</span>
+      <span class="app-desc">Smartphone Controller</span>
+    </div>
+    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="badge-img">
+  </a>
+</div>
+<p class="app-store-note">Available on iOS, iPadOS, macOS, and tvOS.</p>
 </div>
 
 </div>
